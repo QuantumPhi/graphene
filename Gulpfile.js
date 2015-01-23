@@ -22,8 +22,6 @@ gulp.task('jade', function() {
 
 gulp.task('scripts:bundle', function() {
     return browserify()
-        .require('jquery')
-        .require('d3')
         .require('./js/colors.json')
         .bundle()
         .pipe(source('bundle.js'))
@@ -33,9 +31,7 @@ gulp.task('scripts:bundle', function() {
 })
 
 gulp.task('scripts:index', function() {
-    return browserify('./js/index.js')
-        .external('jquery')
-        .external('d3')
+    return browserify('./js/graph.js')
         .external('./js/colors.json')
         .bundle()
         .pipe(source('index.js'))
@@ -45,7 +41,7 @@ gulp.task('scripts:index', function() {
 })
 
 gulp.task('watch', function() {
-    gulp.watch('js/index.js', ['scripts:index'])
+    gulp.watch('js/graph.js', ['scripts:index'])
     gulp.watch('jade/index.jade', ['jade'])
 })
 
