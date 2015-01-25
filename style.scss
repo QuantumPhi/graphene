@@ -15,7 +15,10 @@ html, body
     -webkit-font-smoothing: subpixel-antialiased;
 }
 
-#background
+#content
 {
-    
+    width: 100%;
+    height: 100%;
+
+    background: #2c3e50;
 }
