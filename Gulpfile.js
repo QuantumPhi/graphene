@@ -34,7 +34,7 @@ gulp.task('scripts:index', function() {
     return browserify('./js/graph.js')
         .external('./js/colors.json')
         .bundle()
-        .pipe(source('index.js'))
+        .pipe(source('graph.js'))
         .pipe(buffer())
         .pipe(uglify())
         .pipe(gulp.dest('dist'))
