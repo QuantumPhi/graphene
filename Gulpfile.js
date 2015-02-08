@@ -20,19 +20,8 @@ gulp.task('jade', function() {
         .pipe(gulp.dest('.'))
 })
 
-gulp.task('scripts:bundle', function() {
-    return browserify()
-        .require('./js/colors.json')
-        .bundle()
-        .pipe(source('bundle.js'))
-        .pipe(buffer())
-        .pipe(uglify())
-        .pipe(gulp.dest('dist'))
-})
-
 gulp.task('scripts:index', function() {
     return browserify('./js/graph.js')
-        .external('./js/colors.json')
         .bundle()
         .pipe(source('graph.js'))
         .pipe(buffer())

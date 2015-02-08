@@ -21,4 +21,21 @@ html, body
     height: 100%;
 
     background: #2c3e50;
+
+    svg
+    {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+
+        .node {
+            stroke: #fff;
+            stroke-width: 0.1em;
+        }
+
+        .link {
+            stroke: #bbb;
+            fill: none;
+        }
+    }
 }
